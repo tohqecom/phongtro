@@ -21,6 +21,7 @@ class CreateRentsTable extends Migration
             $table->date('date_end');
             $table->boolean('paid');
             $table->boolean('old');
+            $table->text('descriptions');
         });
     }
 

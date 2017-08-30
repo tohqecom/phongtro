@@ -56,6 +56,13 @@
                                 <h4 id="total-days">Total days: 0 at rate {{$car->cost}}$ per day</h4>
                                 <h4 id="total-cost">Total cost: 0$</h4>
                                 <h4 id="totalcost"></h4>
+                                <h4 id="descriptions">Descriptions:</h4>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <textarea class="form-control grey-glow" name="descriptions" autofocus>
+                                        </textarea>
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4">
                                         <button type="submit" class="btn btn-primary grey-button">

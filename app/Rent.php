@@ -10,7 +10,7 @@ class Rent extends Model
     protected $table = "rents";
 
     protected $fillable = [
-        'user_id','car_id','date_start', 'date_end','paid','old'
+        'user_id','car_id','date_start', 'date_end','paid','old','descriptions'
     ];
 
     public $timestamps = false;

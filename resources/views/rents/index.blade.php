@@ -14,23 +14,24 @@
                     <th class="col-md-2">Date end:</th>
                     <th class="col-md-1">Cost:</th>
                     <th class="col-md-2">Paid:</th>
+                    <th class="col-md-2">Descriptions:</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($rents as $rent)
                     @if(!$rent->old)
                         <tr>
-                        <td>{{$rent->brand}} {{$rent->model}} {{$rent->productionYear}}</td>
-                        <td>{{$rent->date_start}}</td>
-                        <td>{{$rent->date_end}}</td>
-                        <td>{{$rent->cost}}$</td>
-                        @if($rent->paid)
-                            <td>Payment received</td>
-                        @else
-                            <td>Waiting for payment</td>
-                                <td>Pay</td>
-                        @endif
-
+                            <td>{{$rent->brand}} {{$rent->model}} {{$rent->productionYear}}</td>
+                            <td>{{$rent->date_start}}</td>
+                            <td>{{$rent->date_end}}</td>
+                            <td>{{$rent->cost}}$</td>
+                            @if($rent->paid)
+                                <td>Payment received</td>
+                            @else
+                                <td>Waiting for payment</td>
+                                    <td>Pay</td>
+                            @endif
+                            <td>{{$rent->descriptions}}</td>
                         <tr>
                     @endif
                 @endforeach
@@ -47,6 +48,7 @@
                     <th class="col-md-2">Date end:</th>
                     <th class="col-md-1">Cost:</th>
                     <th class="col-md-2"></th>
+                    <th class="col-md-2">Descriptions:</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -59,7 +61,7 @@
                             <td>{{$rent->cost}}$</td>
                             <td></td>
                             <td></td>
-
+                            <td>{{$rent->descriptions}}</td>
                         <tr>
                     @endif
                 @endforeach

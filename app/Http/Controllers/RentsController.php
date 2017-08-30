@@ -12,7 +12,7 @@ class RentsController extends Controller
 
         $rents = \DB::table('cars')->where('user_id', '=',$id)
             ->join('rents','cars.id','=','rents.car_id')
-            ->select('cars.*','rents.date_start','rents.date_end','rents.paid', 'rents.old')
+            ->select('cars.*','rents.descriptions','rents.date_start','rents.date_end','rents.paid', 'rents.old')
             ->get();
 
         foreach($rents as $rent){
@@ -30,6 +30,7 @@ class RentsController extends Controller
             'date_end' => $input['date-end'],
             'paid' => false,
             'old' =>false,
+            'descriptions' => $input['descriptions'],
         ]);
 
         \DB::table('cars')->where('id','=', $car_id)->update([
