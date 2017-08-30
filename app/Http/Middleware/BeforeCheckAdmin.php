@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Support\Facades\Auth;
+
+class beforeCheckAdmin
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        if(Auth::guest()){
+            return redirect('/');
+        }
+        elseif (Auth::user()->admin == true){
+            return $next($request);
+        }
+        elseif ($request->route()->getName() == 'cars'){
+            return $next($request);
+        }
+        return redirect('/cars');
+    }
+}
